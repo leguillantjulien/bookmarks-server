@@ -5,7 +5,7 @@ import { Document, Model } from "mongoose";
 import { PictureMediaLink } from "../../Domain/Model/picture_medialink";
 import { IPictureMediaLinkRepository as PictureMediaLinkRepositoryInterface } from "../../Domain/Repository/repositories";
 import TYPES from '../../constant/types';
-import { pictureMediaLinkSchema } from './schemas/PictureMediaLinkSchema';
+import { pictureMediaLinkSchema } from './schemas/pictureMediaLinkSchema';
 
 export interface PictureMediaLinkModel extends PictureMediaLink, Document {
   id: string;

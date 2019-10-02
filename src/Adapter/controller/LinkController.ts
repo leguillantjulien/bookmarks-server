@@ -3,7 +3,7 @@ import { LinkService } from '../../Application/Services/LinkService';
 import * as express from "express";
 import { inject } from 'inversify';
 import TYPES from '../../constant/types';
-import { MediaLink } from '../../Domain/Model/MediaLink'
+import { MediaLink } from '../../Domain/Model/medialink'
 import ERRORS from '../../constant/error';
 
 @controller("/links")

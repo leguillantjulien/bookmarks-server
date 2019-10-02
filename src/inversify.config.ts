@@ -13,10 +13,10 @@ import { LinkService } from './Application/Services/LinkService'
 import { IMediaLinkRepository, IPictureMediaLinkRepository, IVideoMediaLinkRepository } from './Domain/Repository/repositories';
 //Domain Repo Interfaces
 import {
-	IMediaLinkRepository as MediaLinkRepositoryInterface,
-	IPictureMediaLinkRepository as PictureMediaLinkRepositoryInterface,
-	IVideoMediaLinkRepository as VideoMediaLinkRepositoryInterface
-} from "./domain/repository/repositories";
+  IMediaLinkRepository as MediaLinkRepositoryInterface,
+  IPictureMediaLinkRepository as PictureMediaLinkRepositoryInterface,
+  IVideoMediaLinkRepository as VideoMediaLinkRepositoryInterface
+} from "./Domain/Repository/repositories";
 
 // Intrastructure Repo
 
@@ -28,12 +28,12 @@ import { MediaLinkRepository } from './Infrastructure/repository/medialink_repos
 import "./Adapter/controller/LinkController"
 
 export const referenceDataIoCModule = new ContainerModule((bind) => {
-	// services
-	bind<LinkService>(TYPES.LinkService).to(LinkService);
+  // services
+  bind<LinkService>(TYPES.LinkService).to(LinkService);
 
-	// Repositories
-	bind<IMediaLinkRepository>(TYPES.IMediaLinkRepository).to(MediaLinkRepository);
-	bind<IPictureMediaLinkRepository>(TYPES.IPictureMediaLinkRepository).to(PictureMediaLinkRepository);
-	bind<IVideoMediaLinkRepository>(TYPES.IVideoMediaLinkRepository).to(VideoMediaLinkRepository);
+  // Repositories
+  bind<IMediaLinkRepository>(TYPES.IMediaLinkRepository).to(MediaLinkRepository);
+  bind<IPictureMediaLinkRepository>(TYPES.IPictureMediaLinkRepository).to(PictureMediaLinkRepository);
+  bind<IVideoMediaLinkRepository>(TYPES.IVideoMediaLinkRepository).to(VideoMediaLinkRepository);
 
 });
