@@ -86,17 +86,14 @@ export class GenericRepository<TEntity, TModel extends Document> implements CRUD
     });
   }
 
-  public async findOneAndUpdate(doc: TEntity) {
+  public async findOneAndUpdate(doc: TEntity, id: TEntity) {
     return new Promise<TEntity>((resolve, reject) => {
-      return this.Model.find().select("_id").exec((err, id) => {
-        console.log(`id : ${id} \r`);
-        return this.Model.findOneAndUpdate({ _id: id }, doc, { new: false, upsert: false }, (err, res) => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve(this._readMapper(res));
-          }
-        });
+      return this.Model.findOneAndUpdate({ _id: id }, doc, { new: true, upsert: false }, (err, res) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(this._readMapper(res));
+        }
       });
     });
   }

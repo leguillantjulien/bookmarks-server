@@ -8,7 +8,7 @@ export type Query<T> = {
 
 export interface CRUDRepository<T> {
   save(doc: T): Promise<T>;
-  findOneAndUpdate(doc: T, id?: T): Promise<T>;
+  findOneAndUpdate(doc: T, id: T): Promise<T>;
   findOneByFilter(filter: any): Promise<T>;
   count(): Promise<Number>;
   update(filter: any, set: any): Promise<T>;

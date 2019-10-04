@@ -110,7 +110,7 @@ export class LinkService {
   }
 
   private updatePictureMediaLink(pictureMediaLink: any) {
-    return this.pictureMediaLinkRepository.findOneAndUpdate(pictureMediaLink)
+    return this.pictureMediaLinkRepository.findOneAndUpdate(pictureMediaLink, pictureMediaLink.id)
       .then((res) => {
         return Promise.resolve(this.findMediaById(res.id));
       }).catch(err => {
@@ -120,7 +120,7 @@ export class LinkService {
   }
 
   private updateVideoMediaLink(videoMediaLink: any) {
-    return this.videoMediaLinkRepository.findOneAndUpdate(videoMediaLink)
+    return this.videoMediaLinkRepository.findOneAndUpdate(videoMediaLink, videoMediaLink.id)
       .then((res) => {
         return Promise.resolve(this.findMediaById(res.id));
       }).catch(err => {
