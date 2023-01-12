@@ -53,7 +53,7 @@
     "bluebird": "^3.5.1",
     "body-parser": "1.18.2",
     "chance": "^1.0.13",
-    "class-validator": "^0.7.3",
+    "class-validator": "^0.14.0",
     "cors": "^2.8.4",
     "crypto": "^1.0.1",
     "evp_bytestokey": "^1.0.3",
